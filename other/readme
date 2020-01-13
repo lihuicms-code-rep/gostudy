@@ -1,0 +1,25 @@
+go开发中碰到的问题记录总结
+1.GO的相对路径问题
+go run main.go        //打印的是临时目录
+go build ->  ./main   //打印的是当前执行所在目录
+
+遇到的问题:提示找不到配置文件路径
+解决思路
+1.先通过GetExecPath()得到当前可执行文件所在目录,然后拼接配置文件
+比如: cfgPath := GetExecPath() + "/cong/a.json"
+这种适用于go build后使用 ./ 执行的情况
+2.通过参数传递,目前项目中也是使用这种,这个使用还是比较方便的
+具体就是使用flag模块
+
+更多文件读写操作:https://studygolang.com/articles/14669?fr=sidebar
+
+2.GO的单元测试
+1)编写*_test.go
+2)gomock进行单元测试
+
+
+3.内存对齐
+4.理解goroutine
+
+
+
